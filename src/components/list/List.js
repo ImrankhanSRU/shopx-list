@@ -24,19 +24,19 @@ export default class List extends Component {
         this.setState({ list })
     }
 
-    clearCompletedList = () => {
-        let list = [...this.state.list]
-        let completedItems = []
-        list.forEach((item, index) => {
-            if (item.isCompleted) {
-                completedItems.push(index)
-            }
-        })
-        completedItems.forEach(item => {
-            list.splice(item, 1)
-        })
-        this.setState({list})
-    }
+    // clearCompletedList = () => {
+    //     let list = [...this.state.list]
+    //     let completedItems = []
+    //     list.forEach((item, index) => {
+    //         if (item.isCompleted) {
+    //             completedItems.push(index)
+    //         }
+    //     })
+    //     completedItems.forEach(item => {
+    //         list.splice(item, 1)
+    //     })
+    //     this.setState({list})
+    // }
 
     completeTask = (id, value) => {
         let list = [...this.state.list]
@@ -97,7 +97,7 @@ export default class List extends Component {
                             this.setFilterType(3)
                         }}>COMPLTED</span>
                     </div>
-                    <div className="hover-color" onClick = {this.clearCompletedList}>CLEAR COMPLTED</div>
+                    <div className="hover-color">CLEAR COMPLTED</div>
                 </div>
                 <div className="list">
                     <input className="list-item" placeholder="What needs to be done?" onKeyDown={this.addItem} />
